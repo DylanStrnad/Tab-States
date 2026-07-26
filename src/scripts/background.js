@@ -15,4 +15,15 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
             sendResponse({ restored: message.sessionIds.length });
         })();
     }
+    if(message.action === 'restore-tabs-state'){
+         (async () => {
+            for (const tab of message.savedTabs) {
+                    await chrome.tabs.create({
+                        url: tab.url,
+                    });
+                    console.log("tab restored");
+            }
+            sendResponse({ restored: message.savedTabs.length });
+        })();
+    }
 });

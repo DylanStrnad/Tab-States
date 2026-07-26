@@ -17,7 +17,7 @@
   ],
   
   "permissions": [
-    "tabs", "tabGroups", "sessions"
+    "tabs", "tabGroups", "sessions", "storage"
   ],
 
   "background": {
