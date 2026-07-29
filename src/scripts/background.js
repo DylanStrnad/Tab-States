@@ -23,6 +23,8 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
                     });
                     console.log("tab restored");
             }
+            //remove tabs not part of state
+            await chrome.tabs.remove(message.tabIds);
             sendResponse({ restored: message.savedTabs.length });
         })();
     }
