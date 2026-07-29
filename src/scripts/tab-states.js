@@ -19,6 +19,7 @@ async function loadState(state) {
     await chrome.tabs.remove(tabIds);
 }
 
+//sets/retrieves state name from memory
 async function renameState(stateId, newStateName) {
     const stateName = document.querySelector(stateId);
     stateName.addEventListener('input', (e) => chrome.storage.local.set({[newStateName]: e.target.value}));
@@ -32,13 +33,14 @@ async function addState(){
     const existingStates = document.querySelectorAll('.btn-group');
     const newState = existingStates.length;
     const html = `<div class="btn-group" role="group" aria-label="Basic outlined example" style="padding: 1em; ">
-      <button id="state-${newState}"class="btn btn-primary btn-sm sort-btn" style="margin: 0.1em; padding-left: 2em; padding-right: 2em; background-color: #51585d; border-color: #75001d;"> <input type="text" id="rename-state-${newState}" placeholder="state 1" size="5"> </button>
+      <button id="state-${newState}"class="btn btn-primary btn-sm sort-btn" style="margin: 0.1em; padding-left: 2em; padding-right: 2em; background-color: #51585d; border-color: #75001d;"> <input type="text" id="rename-state-${newState}" placeholder="state ${newState}" size="5"> </button>
       <button id="save-state-${newState}" class="btn btn-primary btn-sm sort-btn" style="margin: 0.1em; padding-left: 1.25em; padding-right: 1.25em; background-color: #51585d; border-color: #75001d;">Save</button>
       <button id="load-state-${newState}" class="btn btn-primary btn-sm sort-btn" style="margin: 0.1em; padding-left: 1.25em; padding-right: 1.25em; background-color: #51585d; border-color: #75001d;">Load</button>
     </div>`;
 
     const insertLocation = document.querySelector('#plus').closest('.btn-group');
     insertLocation.insertAdjacentHTML('beforebegin', html);
+    await chrome.storage.local.set({totalStates: newState});
     
 }
 
@@ -62,8 +64,20 @@ loadState3Button.addEventListener('click', () => loadState('state3'));
 const addStateButton = document.querySelector('#plus');
 addStateButton.addEventListener('click', () => addState());
 
-//rename state button
+//reload DOM content when page is reloaded
 window.addEventListener('DOMContentLoaded', async () => {
+    let numberOfStates = await chrome.storage.local.get({totalStates: 3});
+    numberOfStates = numberOfStates.totalStates;
+    console.log(numberOfStates);
+    for(let i = 4; i <= numberOfStates; ++i){
+        const html = `<div class="btn-group" role="group" aria-label="Basic outlined example" style="padding: 1em; ">
+                <button id="state-${i}"class="btn btn-primary btn-sm sort-btn" style="margin: 0.1em; padding-left: 2em; padding-right: 2em; background-color: #51585d; border-color: #75001d;"> <input type="text" id="rename-state-${i}" placeholder="state ${i}" size="5"> </button>
+                <button id="save-state-${i}" class="btn btn-primary btn-sm sort-btn" style="margin: 0.1em; padding-left: 1.25em; padding-right: 1.25em; background-color: #51585d; border-color: #75001d;">Save</button>
+                <button id="load-state-${i}" class="btn btn-primary btn-sm sort-btn" style="margin: 0.1em; padding-left: 1.25em; padding-right: 1.25em; background-color: #51585d; border-color: #75001d;">Load</button>
+            </div>`;
+        const insertLocation = document.querySelector('#plus').closest('.btn-group');
+        insertLocation.insertAdjacentHTML('beforebegin', html);
+    }
     const existingStates = document.querySelectorAll('.btn-group');
     for(let i = 1; i < existingStates.length; ++i){
         renameState(`#rename-state-${i}`, `newStateName${i}`);
