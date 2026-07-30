@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/styles/popup.css" />
+    <link href="src/lib/bootstrap-5.3.8-dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="src/lib/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+
+  <body style="background-color: #3f3f3f;">
+    <template id="li_template">
+      <li>
+        <a>
+          <h3 class="title">Tab Title</h3>
+          <p class="pathname">Tab Pathname</p>
+        </a>
+      </li>
+    </template>
+     <div class="position-relative py-2 px-4 border border-dark text-center" style="margin: 1em; border-radius: 0.5em; background-color: #51585d;  color: white;" > 
+      some buttons...
+    </div>
+    <div class="btn-group" role="group" aria-label="Basic outlined example" style="padding: 1em; ">
+      <button id="state-1"class="btn btn-primary btn-sm sort-btn" style="margin: 0.1em; padding-left: 2em; padding-right: 2em; background-color: #51585d; border-color: #75001d;"> <input type="text" id="rename-state-1" placeholder="state 1" size="5"> </button>
+      <button id="save-state-1" class="btn btn-primary btn-sm sort-btn" style="margin: 0.1em; padding-left: 1.25em; padding-right: 1.25em; background-color: #51585d; border-color: #75001d;">Save</button>
+      <button id="load-state-1" class="btn btn-primary btn-sm sort-btn" style="margin: 0.1em; padding-left: 1.25em; padding-right: 1.25em; background-color: #51585d; border-color: #75001d;">Load</button>
+    </div>
+    <div class="btn-group" role="group" aria-label="Basic outlined example" style="padding: 1em; ">
+      <button id="plus"class="btn btn-primary btn-sm sort-btn" style="margin: 0.1em; padding-left: 2em; padding-right: 2em; background-color: #51585d; border-color: #75001d;"> + </button>
+    </div>
+    <div class="btn-group" role="group" aria-label="Basic outlined example" style="padding: 1em; ">
+      <button id="minus"class="btn btn-primary btn-sm sort-btn" style="margin: 0.1em; padding-left: 2em; padding-right: 2em; background-color: #51585d; border-color: #75001d;"> - </button>
+    </div>
+  </body>
+  <script src="./src/scripts/tab-states.js" type="module"></script>
+</html>
