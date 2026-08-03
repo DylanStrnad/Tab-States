@@ -1,4 +1,7 @@
-:information_source: Overview
+<h1> Welcome to Tab States </h1>
+
+![Tab State logo](/images/Logo.png)
+<h2>:information_source: Overview </h2>
 Tabs states is a chrome and firefox extension that allows you to stay organized and boost productivty. It is simple and easy to use, but has a variety
 of features to help declutter your browser. Additionally, there are NO unnecessary AI features or acount logins.
 
