@@ -17,4 +17,4 @@ Allows for a variety of ways to sort and organize your tabs. The following featu
 * Create tab states to store and access your favorite tabs quickly
 
 <h3>:pencil2: Author</h3>
-I am [Dylan Strnad](https://github.com/DylanStrnad). and created this project in hopes of making an extension to help make your browser easier to use. Tabs can be very hard to organize, especially when you have dozens of tabs open all at once. Check it out, and feel free to report bugs by making an issue
+I am [Dylan Strnad](https://github.com/DylanStrnad) and created this project in hopes of making an extension to help make your browser easier to use. Tabs can be very hard to organize, especially when you have dozens of tabs open all at once. Check it out, and feel free to report bugs by making an issue
