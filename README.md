@@ -17,6 +17,14 @@ Allows for a variety of ways to sort and organize your tabs. The following featu
 * Restoring old tabs and previous browser windows
 * Create tab states to store and access your favorite tabs quickly
 
+## :arrow_heading_down: Installation
+* Developer mode must be ON for this to work!
+* Download the zip file from releases
+* Extract zip file
+* Open the extensions page
+* Click load unpacked and select extension folder
+* Done!
+
 :pencil2: Author
 
 I'm [Dylan Strnad](https://github.com/DylanStrnad) and created this project in hopes of making an extension to help make your browser easier to use. Tabs can be very hard to organize, especially when you have dozens of tabs open all at once. Check it out, and feel free to report bugs by making an issue
