@@ -37,7 +37,7 @@ async function addState(){
     const insertLocation = document.querySelector('#plus').closest('.btn-group');
     insertLocation.insertAdjacentHTML('beforebegin', html);
     await chrome.storage.local.set({totalStates: newTotal});
-    
+    renameState(`#rename-state-${newTotal}`, `newStateName${newTotal}`);
 }
 
 async function removeState(){
