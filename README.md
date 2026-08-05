@@ -25,6 +25,6 @@ Allows for a variety of ways to sort and organize your tabs. The following featu
 * Click load unpacked and select extension folder
 * Done!
 
-:pencil2: Author
+### :pencil2: Author
 
 I'm [Dylan Strnad](https://github.com/DylanStrnad) and created this project in hopes of making an extension to help make your browser easier to use. Tabs can be very hard to organize, especially when you have dozens of tabs open all at once. Check it out, and feel free to report bugs by making an issue
